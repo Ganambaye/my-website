@@ -127,6 +127,9 @@
     .marquee-track { display: flex; width: max-content; }
     .marquee-wrap:hover .marquee-track { animation-play-state: paused; }
   </style>
+  <noscript>
+    <style>.reveal { opacity: 1 !important; transform: none !important; }</style>
+  </noscript>
 </head>
 
 <body class="font-sans text-slate-600 antialiased overflow-x-hidden">
@@ -180,7 +183,10 @@
 
   <main>
     <!-- ================= HERO ================= -->
-    <section id="accueil" class="relative min-h-screen flex items-center pt-24 pb-16 bg-grid">
+    <section id="accueil" class="relative min-h-screen flex items-center pt-24 pb-16">
+      <!-- Grille de fond isolée (le mask ne doit JAMAIS être sur la section : il masquerait le contenu) -->
+      <div class="absolute inset-0 bg-grid pointer-events-none" aria-hidden="true"></div>
+
       <!-- Halos décoratifs -->
       <div class="glow-orb w-[32rem] h-[32rem] bg-indigo-300/40 -top-32 -left-32 animate-float-slow"></div>
       <div class="glow-orb w-[26rem] h-[26rem] bg-cyan-200/50 top-1/2 -right-24 animate-float"></div>
